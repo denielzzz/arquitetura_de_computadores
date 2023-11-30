@@ -7,8 +7,9 @@ Equipe:
 
 ### Desenvolvimento do MIPS Pipeline
 
-Desenvolvimento de um Pipeline MIPS no Logisim Evolution com um programa de teste destinado a calcular o décimo sexto termo da sequência de Fibonacci.<br>
-Como parte integrante deste projeto, foi elaborado um programa de teste específico com o propósito de calcular o décimo sexto termo da sequência de Fibonacci, uma série matemática notável, na qual cada termo é a soma dos dois anteriores. O décimo sexto termo da sequência de Fibonacci é particularmente interessante, pois exige uma quantidade substancial de cálculos iterativos, oferecendo assim uma avaliação abrangente da capacidade do pipeline em lidar com operações complexas de maneira eficiente. <br>
+Desenvolvimento de um Pipeline MIPS no Logisim Evolution com um programa de teste destinado a calcular o décimo sexto termo da sequência de Fibonacci.
+
+Como parte integrante deste projeto, foi elaborado um programa de teste específico com o propósito de calcular o décimo sexto termo da sequência de Fibonacci, uma série matemática notável, na qual cada termo é a soma dos dois anteriores. O décimo sexto termo da sequência de Fibonacci é particularmente interessante, pois exige uma quantidade substancial de cálculos iterativos, oferecendo assim uma avaliação abrangente da capacidade do pipeline em lidar com operações complexas de maneira eficiente.
 <br>
 ### Descrição da Arquitetura
 
@@ -24,3 +25,8 @@ Contamos com um multiplexador que realiza um flush, transformando a instrução 
 
 Dentro do banco de registradores, dispomos de 32 registradores, sendo notável que o registrador 0 é dedicado à constante 0.<br>
 Os registradores RT e RD passam por um multiplexador, uma vez que, dependendo do formato da instrução em execução, o registrador de destino pode ser modificado.
+
+A memória de instrução possui 16 bits de endereço, pois o logisim não suporta 32 bits. <br>
+O mesmo para a outra memória, os dados possuem 32 bits, mas somente 16 bits de endereço.
+
+O processador integra uma Unidade de Previsão de Desvio, encarregada de identificar se uma instrução é um Jump ou um Branch. No caso de um Jump, a unidade realiza o cálculo do endereço correspondente, sendo que, devido às particularidades da arquitetura, instruções Jump têm um endereço de apenas 16 bits. O funcionamento desta unidade é orientado por uma máquina de estados de 2 bits, otimizando o processo de previsão de desvio e contribuindo para a eficiência global do processador.
