@@ -12,10 +12,15 @@ Como parte integrante deste projeto, foi elaborado um programa de teste específ
 <br>
 ### Descrição da Arquitetura
 
-O clock é configurado de maneira invertida, indicando que sua operação ocorre especificamente na borda de descida. 
-Os blocos de registradores intermediários, compreendendo as etapas IF/ID, ID/EX, EX/MEM e MEM/WB, desempenham um papel essencial no fluxo ordenado de dados em um processador. Cada um desses blocos armazena os dados por um ciclo de clock. <br>
-No  (ID), ocorre a decodificação da instrução, na qual a informação é formatada e distribuída em diversos bits para os campos funct, shamt, RD, imm, RT, RS e opcode - de acordo com o formato da instrução, R, I ou J. <br>
-Na unidade de controle (Control), os sinais de controle são distribuídos com base nos valores do OPcode e funct. O OPcode é utilizado exclusivamente quando seu valor é distinto de zero; caso contrário, o funct é utilizado para determinar os sinais de controle pertinentes. Essa lógica de seleção entre OPcode e funct contribui para uma adaptação precisa e eficaz do controle conforme a natureza da instrução em execução. <br>
-Contamos com um multiplexador que realiza um flush, transformando a instrução em uma bolha. Em situações como saltos ou load seguido de uso, o multiplexador distribui o valor zero para todos os sinais, indicando que nenhuma operação deve ser executada. Portanto, penalidade de um ciclo de clock. <br>
+A estrutura do processador é delineada por uma série de componentes, cada qual desempenhando um papel importante na execução eficiente de instruções.
+
+O clock, configurado de forma invertida, sinaliza sua operação na borda de descida, garantindo uma sincronização precisa das operações. Os blocos de registradores intermediários, como IF/ID, ID/EX, EX/MEM e MEM/WB, desempenham um papel central na orquestração ordenada dos dados, armazenando informações durante um ciclo de clock.
+
+Na fase de decodificação (ID), as instruções são analisadas e formatadas, distribuindo-se em bits específicos para os campos funct, shamt, RD, imm, RT, RS e opcode, variando conforme o formato da instrução (R, I ou J).
+
+A unidade de controle (Control) desempenha um papel crucial na distribuição dos sinais de controle, tomando decisões com base nos valores do OPcode e funct. O OPcode é utilizado exclusivamente quando diferente de zero; caso contrário, o funct é empregado para determinar os sinais de controle adequados, promovendo uma adaptação precisa às instruções em execução.
+
+Contamos com um multiplexador que realiza um flush, transformando a instrução em uma bolha. Em situações como saltos ou load seguido de uso, o multiplexador distribui o valor zero para todos os sinais, indicando que nenhuma operação deve ser executada. Portanto, penalidade de um ciclo de clock. 
+
 Dentro do banco de registradores, dispomos de 32 registradores, sendo notável que o registrador 0 é dedicado à constante 0.<br>
 Os registradores RT e RD passam por um multiplexador, uma vez que, dependendo do formato da instrução em execução, o registrador de destino pode ser modificado.
