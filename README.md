@@ -31,3 +31,5 @@ O mesmo para a outra memória, os dados possuem 32 bits, mas somente 16 bits de 
 
 O processador integra uma Unidade de Previsão de Desvio, encarregada de identificar se uma instrução é um Jump ou um Branch. No caso de um Jump, a unidade realiza o cálculo do endereço correspondente, sendo que, devido às particularidades da arquitetura, instruções Jump têm um endereço de apenas 16 bits. O funcionamento desta unidade é orientado por uma máquina de estados de 2 bits, otimizando o processo de previsão de desvio e contribuindo para a eficiência global do processador. <br>
 Com penalidade de 2 ciclos de clock quando erra o desvio.
+
+A Unidade de Hazard (Hazard Unit) entra em ação quando ocorre uma situação de load seguido por uma operação de uso. Verifica se RS ou RT são iguais ao RD.
