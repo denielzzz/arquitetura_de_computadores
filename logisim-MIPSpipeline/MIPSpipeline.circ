@@ -1504,9 +1504,11 @@
       <a name="addrWidth" val="16"/>
       <a name="appearance" val="logisim_evolution"/>
       <a name="contents">addr/data: 16 8
-20 1 0 1 ac 1 0 1
-8c 2 0 1 8c 43 0 0
-8c 64
+20 1 0 0 20 2 0 1
+20 3 0 1 20 5 0 10
+0 22 8 20 0 20 20 20
+0 40 8 20 0 80 10 20
+20 63 0 1 14 65 ff fa
 </a>
       <a name="labelvisible" val="true"/>
       <a name="line" val="quad"/>
@@ -2265,6 +2267,9 @@
       <a name="appearance" val="logisim_evolution"/>
       <a name="width" val="16"/>
     </comp>
+    <comp lib="8" loc="(1069,647)" name="Text">
+      <a name="text" val="BranchFlush"/>
+    </comp>
     <comp lib="8" loc="(765,545)" name="Text">
       <a name="text" val="Shamt"/>
     </comp>
@@ -2288,9 +2293,6 @@
     </comp>
     <comp lib="8" loc="(790,440)" name="Text">
       <a name="text" val="RegWrite"/>
-    </comp>
-    <comp lib="8" loc="(790,635)" name="Text">
-      <a name="text" val="BranchFlush"/>
     </comp>
     <comp lib="8" loc="(790,675)" name="Text">
       <a name="text" val="A"/>
@@ -3466,6 +3468,9 @@
     <comp lib="8" loc="(1235,765)" name="Text">
       <a name="text" val="BranchPrediction-2CLK"/>
     </comp>
+    <comp lib="8" loc="(420,525)" name="Text">
+      <a name="text" val="JumpAddress16bit"/>
+    </comp>
     <comp lib="8" loc="(450,705)" name="Text">
       <a name="text" val="Equal"/>
     </comp>
@@ -3480,9 +3485,6 @@
     </comp>
     <comp lib="8" loc="(485,575)" name="Text">
       <a name="text" val="Jump"/>
-    </comp>
-    <comp lib="8" loc="(535,525)" name="Text">
-      <a name="text" val="JumpAddress16bit"/>
     </comp>
     <comp lib="8" loc="(55,515)" name="Text">
       <a name="text" val="Instruction"/>
