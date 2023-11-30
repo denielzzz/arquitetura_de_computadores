@@ -33,3 +33,5 @@ O processador integra uma Unidade de Previsão de Desvio, encarregada de identif
 Com penalidade de 2 ciclos de clock quando erra o desvio.
 
 A Unidade de Hazard (Hazard Unit) entra em ação quando ocorre uma situação de load seguido por uma operação de uso. Verifica se RS ou RT são iguais ao RD.
+
+A Unidade de Forwarding verifica se o RS ou RT é igual ao registrador em que haverá escrita.
