@@ -9,3 +9,4 @@ add  0x00400820 // reg1 = reg2
 add  0x00801020 // reg2 = reg4
 addi 0x20630001 // reg3 = reg3+1
 bne  0x1465fffa // reg3 != reg5 ? loop : continue
+continue:
